@@ -17,25 +17,26 @@
 
 
 <body>
- <div class="jumbotron">
+ <!-- <div class="jumbotron">
     <h1 class="text-center">Crystals Collector Game</h1>
-  </div>
+  </div> -->
 
-    <div class="panel-body">
+  <h2 class="text-center">Crystals Collector Game</h2>
+
+    <div class="panel-body text-center">
       <button id="btn1" value = "rnd1" class="number"><img src="assets/images/img1.jpg"></button>
       <button id="btn2" value = "rnd2" class="number"><img src="assets/images/img2.jpg"></button>
       <button id="btn3" value = "rnd3" class="number"><img src="assets/images/img3.jpg"></button>
       <button id="btn4" value = "rnd4" class="number"><img src="assets/images/img4.jpg"></button>
     </div>
 
-    <br></br><br></br>
     
     <div class="display">
-      <div id="results">Results</div>
-      <div id="targetscore">Target</div>
-      <div id="userscore">Your Score</div>
-      <div id="wins">Wins</div>
-      <div id="loss">Loss</div>
+      <div id="results" class="alert alert-info text-center">Results</div>
+      <div id="targetscore" class="alert alert-warning">Target</div>
+      <div id="userscore" class="alert alert-warning">Score</div>
+      <div id="wins" class = "alert alert-success">Wins = 0</div>
+      <div id="loss" class="alert alert-danger">Loss = 0</div>
       <div id="random"></div>
     </div>
 

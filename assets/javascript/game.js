@@ -5,79 +5,99 @@
 // Counters of wins and losses are displayed to the user.
 
 
-$(document).ready(function() {
 
-  var rndResult;
+$(document).ready(function() {
+  var rndResult  =0;
   var rnd1;
   var rnd2;
   var rnd3;
   var rnd4;
-  var score;
+  var score = 0;
   var entry;
-  var wins;
-  var loss;
+  var wins = 0;
+  var loss = 0;
 
-function game(){
-  score += entry
-}
+// function game(){
+//   score += entry
+// }
 function winGame() {
   if (score === rndResult) {
     wins++;
-    $("#wins").append( "Wins: " + wins);
-    resetGame();
+    $("#wins").html( "Wins = " + wins);
+    $("#results").html( "You Won");
+    // alert("Congratulations, You won the Game!");
+    initializeGame();
   };
 }
 
 function lossGame() {
-  if (score < rndResult || score > rndResult){
+  if (score > rndResult){
     loss++;
-    $("#loss").append( "Loss: " + loss);
-    resetGame();
+    $("#loss").html( "Loss = " + loss);
+    $("#results").html( "You Lost");
+    // alert("You have Lost!");
+    initializeGame();
   };
 }
+
+
+
 function initializeGame() {
+  console.log(" I have intialized the game")
   
   rnd1 = Math.floor(Math.random() * 9 + 1);
   rnd2 = Math.floor(Math.random() * 9 + 1);
   rnd3 = Math.floor(Math.random() * 9 + 1);
   rnd4 = 1;
   rndResult = Math.floor(Math.random() * 80 + 25);
+  $("#targetscore").html( "Computer Score: " + rndResult);
+  $("#userscore").html( "Score: 0");
   score = 0;
+}
 
-
-        // console.log(score);
-        // console.log(rnd1);
-        // console.log(rnd2);
-        // console.log(rnd3);
-        // console.log(rnd4);
-
-        
-        console.log(this)
-        // console.log(rnd1)
-        // console.log(rnd2)
-        // console.log()
-
-        // console.log(score);
-        // console.log(rnd1);
-        // console.log(rnd2);
-        // console.log(rnd3);
-        // console.log(rnd4);
-    }
+initializeGame()
 
   
 
     $(".number").on("click", function() {
+      console.log("I have pressed a buton and my score is" + score)
+      console.log("Computer score is" + rndResult)
+      
         
-        $('btn1').val(this.rnd1);
-        $('btn2').val(this.rnd2);
-        $('btn3').val(this.rnd3);
-        $('btn4').val(this.rnd4);
-        console.log(this);
-      initializeGame();
+  
+  
+      entry = this.value;
+  
+          if (entry ==="rnd1") {
+            score += rnd1;
+            $("#userscore").html( "Score: " + score);
+            console.log(score);
+          } 
+          if (entry ==="rnd2") {
+            score += rnd2;
+            $("#userscore").html( "Score: " + score);
+            console.log(score);
+          } 
+          if (entry ==="rnd3") {
+            score += rnd3;
+            $("#userscore").html( "Score: " + score);
+            console.log(score);
+          } 
+          if (entry ==="rnd4") {
+            score += rnd4;
+            $("#userscore").html( "Score: " + score);
+            console.log(score);
+          } 
+      
+      lossGame();
+      winGame();
+    
+    });
+     
+  });
 
-      var entry = parseInt(this.value);
-      console.log(entry);
-      console.log(this);
+
+    
 
       
       // initializeGame();
@@ -86,10 +106,9 @@ function initializeGame() {
         
         
       // }
-    });
+
   
-    
-  });
+  
 
 
   
